@@ -1,0 +1,63 @@
+﻿using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace POI_App
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+            Loaded += MainWindow_Loaded;
+            string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=POI;Integrated Security=True";
+            SqlRepository repo = new SqlRepository(connectionString);
+        }
+
+        public void CbxPoi_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (CbxPoi.SelectedItem != null)
+            {
+
+            }
+        }
+
+        private async void MainWindow_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            try
+            {
+
+                await Karte.EnsureCoreWebView2Async();
+                Karte.Source = new System.Uri("https://www.openstreetmap.org/"); 
+
+
+                var bmp = new System.Windows.Media.Imaging.BitmapImage();
+                bmp.BeginInit();
+                bmp.UriSource = new System.Uri("https://upload.wikimedia.org/wikipedia/commons/7/75/Berlin-Kreuzberg_Postkarte_055.jpg", System.UriKind.Absolute);
+                bmp.CacheOption = System.Windows.Media.Imaging.BitmapCacheOption.OnLoad;
+                bmp.EndInit();
+                MyImage.Source = bmp; 
+
+                Karte.NavigationCompleted += (s, ev) =>
+                {
+                    if (!ev.IsSuccess)
+                        System.Diagnostics.Debug.WriteLine($"WebView2 Navigation failed: {ev.WebErrorStatus}");
+                };
+            }
+            catch (System.Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+            }
+        }
+    }
+}

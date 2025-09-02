@@ -1,0 +1,153 @@
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.Data.SqlClient;
+
+namespace POI_App
+{
+    internal class SqlRepository : IRepository
+    {
+        private readonly string _connectionString;
+
+        public SqlRepository(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
+
+        public void EnsureDatabaseAndTable()
+        {
+            try
+            {
+                // 1) Ensure database exists (connect to master)
+                var builder = new SqlConnectionStringBuilder(_connectionString);
+                var dbName = builder.InitialCatalog;
+                var masterCs = new SqlConnectionStringBuilder(_connectionString)
+                {
+                    InitialCatalog = "master"
+                }.ConnectionString;
+
+                using (var conn = new SqlConnection(masterCs))
+                using (var cmd = conn.CreateCommand())
+                {
+                    conn.Open();
+                    cmd.CommandText = $"IF DB_ID('{dbName}') IS NULL CREATE DATABASE [{dbName}];";
+                    cmd.ExecuteNonQuery();
+                }
+
+                // 2) Ensure table exists
+                using (var conn = new SqlConnection(_connectionString))
+                using (var cmd = conn.CreateCommand())
+                {
+                    conn.Open();
+                    cmd.CommandText = @"IF OBJECT_ID('dbo.POI', 'U') IS NULL 
+                                        BEGIN
+                                            CREATE TABLE dbo.POI (
+                                                poiID int not null primary key identity(1,1),
+                                                [name] nvarchar(100) not null,
+                                                latitude float not null,
+                                                longitude float not null,
+                                                [description] nvarchar(500) null,
+                                                [image] nvarchar(255) null,
+                                                wikilink nvarchar(255) null
+                                            );
+                                        END";
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"EnsureDatabaseAndTable failed: {ex}");
+                throw;
+            }
+        }
+
+        public Poi GetPoiByID(int poiID)
+        {
+            const string sql = "SELECT poiID, name, latitude, longitude, description, image, wikilink FROM POI WHERE poiID = @poiID";
+            using var conn = new SqlConnection(_connectionString);
+            using var cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@poiID", poiID);
+            conn.Open();
+            using var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                return new Poi
+                {
+                    PoiID = reader.GetInt32(0),
+                    Name = reader.GetString(1),
+                    Latitude = reader.GetDouble(2),
+                    Longitude = reader.GetDouble(3),
+                    Description = reader.IsDBNull(4) ? string.Empty : reader.GetString(4),
+                    Image = reader.IsDBNull(5) ? string.Empty : reader.GetString(5),
+                    WikiLink = reader.IsDBNull(6) ? string.Empty : reader.GetString(6)
+                };
+            }
+            throw new InvalidOperationException($"POI with id {poiID} not found");
+        }
+
+        public void AddPoi(Poi poi)
+        {
+            const string sql = "INSERT INTO POI (name, latitude, longitude, description, image, wikilink) VALUES (@name, @latitude, @longitude, @description, @image, @wikilink)";
+            using var conn = new SqlConnection(_connectionString);
+            using var cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@name", poi.Name);
+            cmd.Parameters.AddWithValue("@latitude", poi.Latitude);
+            cmd.Parameters.AddWithValue("@longitude", poi.Longitude);
+            cmd.Parameters.AddWithValue("@description", string.IsNullOrWhiteSpace(poi.Description) ? (object)DBNull.Value : poi.Description);
+            cmd.Parameters.AddWithValue("@image", string.IsNullOrWhiteSpace(poi.Image) ? (object)DBNull.Value : poi.Image);
+            cmd.Parameters.AddWithValue("@wikilink", string.IsNullOrWhiteSpace(poi.WikiLink) ? (object)DBNull.Value : poi.WikiLink);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+        }
+
+        public void DeletePoi(int poiID)
+        {
+            const string sql = "DELETE FROM POI WHERE poiID = @poiID";
+            using var conn = new SqlConnection(_connectionString);
+            using var cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@poiID", poiID);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+        }
+
+        public List<GetSet> GetAllPOI()
+        {
+            var poiList = new List<GetSet>();
+            const string sql = "SELECT poiID, name, latitude, longitude, description, image, wikilink FROM POI ORDER BY name";
+            using var conn = new SqlConnection(_connectionString);
+            using var cmd = new SqlCommand(sql, conn);
+            conn.Open();
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                poiList.Add(new GetSet
+                {
+                    PoiID = reader.GetInt32(0),
+                    Name = reader.GetString(1),
+                    Latitude = reader.GetDouble(2),
+                    Longitude = reader.GetDouble(3),
+                    Description = reader.IsDBNull(4) ? string.Empty : reader.GetString(4),
+                    Image = reader.IsDBNull(5) ? string.Empty : reader.GetString(5),
+                    WikiLink = reader.IsDBNull(6) ? string.Empty : reader.GetString(6)
+                });
+            }
+            return poiList;
+        }
+
+        public void UpdatePoi(Poi poi)
+        {
+            const string sql = "UPDATE POI SET name = @name, latitude = @latitude, longitude = @longitude, description = @description, image = @image, wikilink = @wikilink WHERE poiID = @poiID";
+            using var conn = new SqlConnection(_connectionString);
+            using var cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@name", poi.Name);
+            cmd.Parameters.AddWithValue("@latitude", poi.Latitude);
+            cmd.Parameters.AddWithValue("@longitude", poi.Longitude);
+            cmd.Parameters.AddWithValue("@description", string.IsNullOrWhiteSpace(poi.Description) ? (object)DBNull.Value : poi.Description);
+            cmd.Parameters.AddWithValue("@image", string.IsNullOrWhiteSpace(poi.Image) ? (object)DBNull.Value : poi.Image);
+            cmd.Parameters.AddWithValue("@wikilink", string.IsNullOrWhiteSpace(poi.WikiLink) ? (object)DBNull.Value : poi.WikiLink);
+            cmd.Parameters.AddWithValue("@poiID", poi.PoiID);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+        }
+    }
+}
+
