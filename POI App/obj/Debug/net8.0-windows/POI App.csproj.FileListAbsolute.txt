@@ -1,10 +1,67 @@
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
 C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\POI App.exe
 C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\POI App.deps.json
 C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\POI App.runtimeconfig.json
 C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\POI App.dll
 C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\POI App.pdb
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.Bcl.Cryptography.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\System.ClientModel.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.xml
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.xml
+C:\Users\FIA\source\repos\POI App\POI App\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.xml
+C:\Users\FIA\source\repos\POI App\POI App\obj\Debug\net8.0-windows\POI App.csproj.AssemblyReference.cache
 C:\Users\FIA\source\repos\POI App\POI App\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\Users\FIA\source\repos\POI App\POI App\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\FIA\source\repos\POI App\POI App\obj\Debug\net8.0-windows\POI App_Content.g.cs
 C:\Users\FIA\source\repos\POI App\POI App\obj\Debug\net8.0-windows\POI App_MarkupCompile.cache
 C:\Users\FIA\source\repos\POI App\POI App\obj\Debug\net8.0-windows\POI App_MarkupCompile.lref
 C:\Users\FIA\source\repos\POI App\POI App\obj\Debug\net8.0-windows\MainWindow.baml
@@ -13,6 +70,8 @@ C:\Users\FIA\source\repos\POI App\POI App\obj\Debug\net8.0-windows\POI App.Gener
 C:\Users\FIA\source\repos\POI App\POI App\obj\Debug\net8.0-windows\POI App.AssemblyInfoInputs.cache
 C:\Users\FIA\source\repos\POI App\POI App\obj\Debug\net8.0-windows\POI App.AssemblyInfo.cs
 C:\Users\FIA\source\repos\POI App\POI App\obj\Debug\net8.0-windows\POI App.csproj.CoreCompileInputs.cache
+C:\Users\FIA\source\repos\POI App\POI App\obj\Debug\net8.0-windows\POI App.sourcelink.json
+C:\Users\FIA\source\repos\POI App\POI App\obj\Debug\net8.0-windows\POI App.csproj.Up2Date
 C:\Users\FIA\source\repos\POI App\POI App\obj\Debug\net8.0-windows\POI App.dll
 C:\Users\FIA\source\repos\POI App\POI App\obj\Debug\net8.0-windows\refint\POI App.dll
 C:\Users\FIA\source\repos\POI App\POI App\obj\Debug\net8.0-windows\POI App.pdb

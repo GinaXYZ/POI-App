@@ -1,35 +1,15 @@
-C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
-C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\POI App.exe
-C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\POI App.deps.json
-C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\POI App.runtimeconfig.json
-C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\POI App.dll
-C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\POI App.pdb
-C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
-C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
-C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\Microsoft.Web.WebView2.Core.dll
-C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
-C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
-C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\Microsoft.Web.WebView2.Core.xml
-C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\Microsoft.Web.WebView2.WinForms.xml
-C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\Microsoft.Web.WebView2.Wpf.xml
 C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.csproj.AssemblyReference.cache
 C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\MainWindow.g.cs
 C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\App.g.cs
 C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App_Content.g.cs
 C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App_MarkupCompile.cache
 C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App_MarkupCompile.lref
-C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\MainWindow.baml
-C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.g.resources
-C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.AssemblyInfoInputs.cache
-C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.AssemblyInfo.cs
-C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.csproj.CoreCompileInputs.cache
-C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.csproj.Up2Date
-C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.dll
-C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\refint\POI App.dll
-C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.pdb
-C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.genruntimeconfig.cache
-C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\ref\POI App.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\POI App.exe
+C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\POI App.deps.json
+C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\POI App.runtimeconfig.json
+C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\POI App.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\POI App.pdb
 C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\Azure.Core.dll
 C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\Azure.Identity.dll
 C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
@@ -74,5 +54,26 @@ C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\runtime
 C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\Microsoft.Web.WebView2.Core.xml
+C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\Microsoft.Web.WebView2.WinForms.xml
+C:\Users\FIA\source\repos\POI App\POI App\bin\x64\Release\net8.0-windows\Microsoft.Web.WebView2.Wpf.xml
+C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\MainWindow.baml
+C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.g.resources
+C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.AssemblyInfoInputs.cache
+C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.AssemblyInfo.cs
+C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.csproj.CoreCompileInputs.cache
+C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.sourcelink.json
+C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.csproj.Up2Date
+C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.dll
+C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\refint\POI App.dll
+C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.pdb
+C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\POI App.genruntimeconfig.cache
+C:\Users\FIA\source\repos\POI App\POI App\obj\x64\Release\net8.0-windows\ref\POI App.dll

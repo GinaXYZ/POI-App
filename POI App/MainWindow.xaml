@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POI_App"
         mc:Ignorable="d"
-        Title="POIs" Height="450" Width="800">
+        Title="POIs" MinHeight="900" MinWidth="1200" Width="1200" Height="900">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -17,24 +17,57 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="50*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
-            <ComboBox x:Name="CbxPoi" Height="auto" Width="351"  FontSize="24" SelectionChanged="CbxPoi_SelectionChanged" Margin="10">
-            </ComboBox>
-            <Label Content="POI" FontSize="24"/>
-        </StackPanel>
-        <Wpf:WebView2 Grid.Column="0" Grid.Row="1" x:Name="Karte"
+        <Menu Grid.Row="0" Background="White">
+            <MenuItem Header="Datei">
+                <MenuItem Header="Datei importieren" Click="MenuItem_Imp_Click" Icon="✉️"/>
+                <MenuItem Header="Datei exportieren" Click="MenuItem_Save_Click" Icon="💾"/>
+                <MenuItem Header="Beenden" Click="MenuItem_Exit_Click" Icon="❌"/>
+            </MenuItem>
+            <MenuItem Header="Neues POI">
+                <StackPanel Margin="10">
+                    <TextBox x:Name="TxtPoiName" Text="Name"  Width="200" Margin="0,0,0,5" FontSize="16" />
+                    <TextBox x:Name="TxtPoiLatitude" Text="Latitude" Width="200" Margin="0,0,0,5" FontSize="16" />
+                    <TextBox x:Name="TxtPoiLongitude" Text="Longitude" Width="200" Margin="0,0,0,5" FontSize="16" />
+                    <TextBox x:Name="TxtPoiDesc" Text="Beschreibung" Width="200" Margin="0,0,0,5" FontSize="16" />
+                    <TextBox x:Name="TxtPoiImage" Text="Bild-URL" Width="200" Margin="0,0,0,5" FontSize="16" />
+                    <TextBox x:Name="TxtPoiWiki" Text="Wikipedia-Link" Width="200" Margin="0,0,0,5" FontSize="16" />
+                    <Button Content="Speichern" Click="BtnPoiSpeichern_Click" Width="100" HorizontalAlignment="Center" Margin="3" VerticalAlignment="Center"/>
+                    <Button Content="Bild auswählen" Click="BtnAddImage_Click" Width="100" HorizontalAlignment="Center" Margin="3" VerticalAlignment="Center"/>
+                </StackPanel>
+            </MenuItem>
+        </Menu>
+        <ComboBox x:Name="CbxPoi"  Grid.Row="0" Grid.Column="2"  Height="auto" Width="351" Margin="0 25 0 0" HorizontalAlignment="Left" FontSize="18" SelectionChanged="CbxPoi_SelectionChanged" />
+        <Wpf:WebView2 Grid.Column="0" Grid.Row="1" x:Name="Karte" Width="600" Height="350"
                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                Margin="10,10,10,10" Source="https://www.openstreetmap.org/#map=6/51.32/10.46" />
         <Image Grid.Column="0" Grid.Row="2" x:Name="MyImage"
+               Height="600" Width="600"
                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-               Margin="10,10,10,10" Source="https://upload.wikimedia.org/wikipedia/commons/7/75/Berlin-Kreuzberg_Postkarte_055.jpg"/>
+               Margin="10,10,10,10"
+               Stretch="Uniform"
+               Source="https://upload.wikimedia.org/wikipedia/commons/7/75/Berlin-Kreuzberg_Postkarte_055.jpg"/>
         <StackPanel Grid.Column="2" Grid.Row="1" Margin="10">
-            <Label Content="Name:" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <Label Content="Lat:" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <Label Content="Lon:" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="Name:" FontSize="18" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label x:Name="LblName" Content="Wählen Sie eine POI aus..." FontSize="16" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+            
+            <Label Content="Latitude:" FontSize="18" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label x:Name="LblLatitude" Content="-" FontSize="16" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"/>
+            
+            <Label Content="Longitude:" FontSize="18" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label x:Name="LblLongitude" Content="-" FontSize="16" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"/>
+            
+            <Button Content="POI löschen" Click="BtnPoiLoeschen_Click" Width="120" HorizontalAlignment="Left" FontSize="20" Margin="0,20,0,0" Background="White" Foreground="Black" BorderBrush="Black"/>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="2" Margin="10">
-            <Label Content="Description:" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="Description:" FontSize="18" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <TextBlock x:Name="LblDescription"
+               Text="Wählen Sie eine POI aus, um die Beschreibung zu sehen..."
+               FontSize="14"
+               VerticalAlignment="Top"
+               Margin="10"
+               HorizontalAlignment="Left"
+               MaxWidth="300"
+               TextWrapping="Wrap"/>
         </StackPanel>
     </Grid>
 </Window>

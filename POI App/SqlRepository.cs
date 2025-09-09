@@ -17,7 +17,7 @@ namespace POI_App
         {
             try
             {
-                // 1) Ensure database exists (connect to master)
+
                 var builder = new SqlConnectionStringBuilder(_connectionString);
                 var dbName = builder.InitialCatalog;
                 var masterCs = new SqlConnectionStringBuilder(_connectionString)
@@ -33,7 +33,7 @@ namespace POI_App
                     cmd.ExecuteNonQuery();
                 }
 
-                // 2) Ensure table exists
+
                 using (var conn = new SqlConnection(_connectionString))
                 using (var cmd = conn.CreateCommand())
                 {
@@ -53,13 +53,75 @@ namespace POI_App
                     cmd.ExecuteNonQuery();
                 }
 
-                // 3) Add seed data if table is empty
-                SeedIfEmpty();
+                // Füge Testdaten hinzu, wenn die Tabelle leer ist
+                if (!HasAnyPoi())
+                {
+                    AddSampleData();
+                    System.Diagnostics.Debug.WriteLine("Sample data added to empty database");
+                }
+
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine($"EnsureDatabaseAndTable failed: {ex}");
                 throw;
+            }
+        }
+
+        private void AddSampleData()
+        {
+            var samplePois = new List<Poi>
+            {
+                new Poi
+                {
+                    Name = "Brandenburger Tor",
+                    Latitude = 52.5163,
+                    Longitude = 13.3777,
+                    Description = "Das Brandenburger Tor ist ein klassizistisches Triumphtor in Berlin und eines der bekanntesten Wahrzeichen Deutschlands.",
+                    Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Brandenburger_Tor_abends.jpg/640px-Brandenburger_Tor_abends.jpg",
+                    WikiLink = "https://de.wikipedia.org/wiki/Brandenburger_Tor"
+                },
+                new Poi
+                {
+                    Name = "Kölner Dom",
+                    Latitude = 50.9413,
+                    Longitude = 6.9583,
+                    Description = "Der Kölner Dom ist eine römisch-katholische Kirche in Köln unter dem Patrozinium des Apostels Petrus.",
+                    Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Cologne_Cathedral.jpg/640px-Cologne_Cathedral.jpg",
+                    WikiLink = "https://de.wikipedia.org/wiki/Kölner_Dom"
+                },
+                new Poi
+                {
+                    Name = "Neuschwanstein",
+                    Latitude = 47.5576,
+                    Longitude = 10.7498,
+                    Description = "Schloss Neuschwanstein steht oberhalb von Hohenschwangau bei Füssen im südöstlichen bayerischen Allgäu.",
+                    Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Schloss_Neuschwanstein_2013.jpg/640px-Schloss_Neuschwanstein_2013.jpg",
+                    WikiLink = "https://de.wikipedia.org/wiki/Schloss_Neuschwanstein"
+                },
+                new Poi
+                {
+                    Name = "Hamburger Hafen",
+                    Latitude = 53.5459,
+                    Longitude = 9.9687,
+                    Description = "Der Hamburger Hafen ist ein Seehafen an der Unterelbe in der Freien und Hansestadt Hamburg.",
+                    Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Berlin-Kreuzberg_Postkarte_055.jpg/640px-Berlin-Kreuzberg_Postkarte_055.jpg",
+                    WikiLink = "https://de.wikipedia.org/wiki/Hamburger_Hafen"
+                },
+                new Poi
+                {
+                    Name = "Münchener Frauenkirche",
+                    Latitude = 48.1385,
+                    Longitude = 11.5732,
+                    Description = "Die Frauenkirche in München ist die Kathedralkirche des Erzbistums München und Freising.",
+                    Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Frauenkirche_Munich_-_View_from_Peterskirche_Tower2.jpg/640px-Frauenkirche_Munich_-_View_from_Peterskirche_Tower2.jpg",
+                    WikiLink = "https://de.wikipedia.org/wiki/Frauenkirche_(München)"
+                }
+            };
+
+            foreach (var poi in samplePois)
+            {
+                AddPoi(poi);
             }
         }
 
@@ -72,50 +134,7 @@ namespace POI_App
             return result != null && result != DBNull.Value;
         }
 
-        public void SeedIfEmpty()
-        {
-            if (HasAnyPoi()) return;
-
-            AddPoi(new Poi
-            {
-                Name = "Brandenburger Tor",
-                Latitude = 52.516275,
-                Longitude = 13.377704,
-                Description = "Wahrzeichen in Berlin",
-                Image = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Brandenburger_Tor_abends.jpg",
-                WikiLink = "https://de.wikipedia.org/wiki/Brandenburger_Tor"
-            });
-
-            AddPoi(new Poi
-            {
-                Name = "Deutsches Museum",
-                Latitude = 48.1303,
-                Longitude = 11.5820,
-                Description = "Museum in München",
-                Image = "https://upload.wikimedia.org/wikipedia/commons/2/22/Deutsches_Museum_2010.jpg",
-                WikiLink = "https://de.wikipedia.org/wiki/Deutsches_Museum"
-            });
-
-            AddPoi(new Poi
-            {
-                Name = "Hamburger Hafen",
-                Latitude = 53.5511,
-                Longitude = 9.9937,
-                Description = "Größter Hafen Deutschlands",
-                Image = "https://upload.wikimedia.org/wikipedia/commons/8/8b/Hamburg_Hafen.jpg",
-                WikiLink = "https://de.wikipedia.org/wiki/Hamburger_Hafen"
-            });
-
-            AddPoi(new Poi
-            {
-                Name = "Neuschwanstein",
-                Latitude = 47.5576,
-                Longitude = 10.7498,
-                Description = "Märchenschloss in Bayern",
-                Image = "https://upload.wikimedia.org/wikipedia/commons/5/55/Neuschwanstein_Castle_LOC_print.jpg",
-                WikiLink = "https://de.wikipedia.org/wiki/Schloss_Neuschwanstein"
-            });
-        }
+     
 
         public Poi GetPoiByID(int poiID)
         {
@@ -168,7 +187,7 @@ namespace POI_App
 
         public List<GetSet> GetAllPOI()
         {
-            var poiList = new List<GetSet>();
+            var pois = new List<GetSet>();
             const string sql = "SELECT poiID, name, latitude, longitude, description, image, wikilink FROM POI ORDER BY name";
             using var conn = new SqlConnection(_connectionString);
             using var cmd = new SqlCommand(sql, conn);
@@ -176,7 +195,7 @@ namespace POI_App
             using var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                poiList.Add(new GetSet
+                pois.Add(new GetSet
                 {
                     PoiID = reader.GetInt32(0),
                     Name = reader.GetString(1),
@@ -187,7 +206,7 @@ namespace POI_App
                     WikiLink = reader.IsDBNull(6) ? string.Empty : reader.GetString(6)
                 });
             }
-            return poiList;
+            return pois;
         }
 
         public void UpdatePoi(Poi poi)

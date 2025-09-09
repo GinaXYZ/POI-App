@@ -1,0 +1,20 @@
+[
+  {
+    "poiID": 0,
+    "name": "JSON Test POI 1",
+    "latitude": 53.5511,
+    "longitude": 9.9937,
+    "description": "Eine Test-POI aus JSON-Import in Hamburg",
+    "image": "https://example.com/json_image1.jpg",
+    "wikiLink": "https://de.wikipedia.org/wiki/JSON_Test1"
+  },
+  {
+    "poiID": 0,
+    "name": "JSON Test POI 2",
+    "latitude": 49.3988,
+    "longitude": 8.6724,
+    "description": "Eine weitere Test-POI aus JSON-Import in Heidelberg",
+    "image": "https://example.com/json_image2.jpg",
+    "wikiLink": "https://de.wikipedia.org/wiki/JSON_Test2"
+  }
+]

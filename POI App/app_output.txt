@@ -1,0 +1,2 @@
+Die Starteinstellungen von C:\Users\FIA\source\repos\POI App\POI App\Properties\launchSettings.json werden verwendetÔÇª
+Database and table initialized successfully
